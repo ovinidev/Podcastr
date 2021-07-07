@@ -1,0 +1,47 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+  ],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-indent': 'off',
+    'react/jsx-closing-tag-location': 'off',
+    'react/jsx-wrap-multilines': 'off',
+    'react/jsx-closing-bracket-location': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-one-expression-per-line': 'off',
+    'no-noninteractive-element-interactions': 'off',
+    'no-shadow': 'off',
+    'no-plusplus': 'off',
+    'no-console': 'off',
+    'no-unused-vars': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'click-events-have-key-events': 'off',
+    'react/prop-types': 'off',
+    'max-len': 'off',
+    'import/prefer-default-export': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'no-trailing-spaces': 'off',
+    'import/named': 'off',
+  },
+};
