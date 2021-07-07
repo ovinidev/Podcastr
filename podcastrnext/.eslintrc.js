@@ -31,6 +31,7 @@ module.exports = {
     'react/jsx-closing-bracket-location': 'off',
     'react/button-has-type': 'off',
     'react/destructuring-assignment': 'off',
+    'react/self-closing-comp': 'off',
     'react/jsx-no-undef': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
