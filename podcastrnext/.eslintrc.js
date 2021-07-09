@@ -26,6 +26,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'react/require-default-props': 'off',
     'react/jsx-indent': 'off',
+    'react/no-unused-prop-types': 'off',
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-wrap-multilines': 'off',
     'react/jsx-closing-bracket-location': 'off',
@@ -55,5 +56,6 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/jsx-props-no-spreading': 'off',
     'no-undef': 'off',
+    camelcase: 'off',
   },
 };
