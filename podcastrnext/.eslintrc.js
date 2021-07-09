@@ -57,5 +57,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'no-undef': 'off',
     camelcase: 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
   },
 };

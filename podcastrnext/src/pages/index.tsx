@@ -37,13 +37,15 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             // sempre usar o key num map colocando id
             return (
               <li key={episode.id}>
-                <Image 
-                  width={192} 
-                  height={192} 
-                  src={episode.thumbnail} 
-                  alt={episode.title} 
-                  objectFit="cover"
+                <div style={{ width: 80 }}>
+                  <Image
+                    width={192}
+                    height={192}
+                    src={episode.thumbnail}
+                    alt={episode.title}
+                    objectFit="cover"
                   />
+                </div>
 
                 <div className={styles.episodeDetails}>
                   <a href="">{episode.title}</a>
@@ -62,10 +64,44 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
       </section>
 
       <section className={styles.allEpisodes}>
+        <table cellSpacing={0}>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Podcast</th>
+              <th>Integrantes</th>
+              <th>Duração</th>
+              <th></th>
+            </tr>
+          </thead>
 
+          <tbody>
+            {allEpisodes.map((episode) => (
+              <tr key={episode.id}>
+                <td style={{ width: 72 }}>
+                  <Image
+                    width={120}
+                    height={120}
+                    src={episode.thumbnail}
+                    alt={episode.title}
+                    objectFit="cover"
+                  />
+                </td>
+
+                <td>{episode.members}</td>
+                <td style={{ width: 100 }}>{episode.publishedAt}</td>
+                <td>{episode.durationString}</td>
+                <td>
+                  <button type="button">
+                    <img src="/play-green.svg" alt="Tocar episódio" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </div>
-
   );
 }
 

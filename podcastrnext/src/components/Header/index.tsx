@@ -10,7 +10,9 @@ export function Header() {
 
   return (
     <header className={styles.Container}>
-      <img src="/logo.svg" alt="Podcastr" />
+      <a href="http://localhost:3000/">
+        <img src="/logo.svg" alt="Podcastr" />
+      </a>
 
       <p>O melhor para você ouvir, sempre</p>
 
