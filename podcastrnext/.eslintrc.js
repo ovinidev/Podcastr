@@ -56,7 +56,8 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/jsx-props-no-spreading': 'off',
     'no-undef': 'off',
-    camelcase: 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    'arrow-body-style': 'off',
+    'no-redeclare': 'off',
   },
 };
