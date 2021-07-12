@@ -59,5 +59,6 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'arrow-body-style': 'off',
     'no-redeclare': 'off',
+    'react/no-danger': 'off',
   },
 };
