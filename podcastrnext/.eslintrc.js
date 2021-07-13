@@ -60,5 +60,6 @@ module.exports = {
     'arrow-body-style': 'off',
     'no-redeclare': 'off',
     'react/no-danger': 'off',
+    'react/jsx-curly-brace-presence': 'off',
   },
 };

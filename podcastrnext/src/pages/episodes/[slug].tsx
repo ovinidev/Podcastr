@@ -58,6 +58,7 @@ export default function Episode({ episode }: EpisodeProps) {
   );
 }
 
+// Toda rota que tiver colchetes (geração estática) é preciso usar o getStaticPaths
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await api.get('episodes', {
     params: {
@@ -77,7 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: 'blocking', // irá rodar a requisição na camada next.js
   };
 };
 
