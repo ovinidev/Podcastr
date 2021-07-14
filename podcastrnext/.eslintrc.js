@@ -61,5 +61,7 @@ module.exports = {
     'no-redeclare': 'off',
     'react/no-danger': 'off',
     'react/jsx-curly-brace-presence': 'off',
+    'jsx-a11y/media-has-caption': 'off',
+    'no-useless-return': 'off',
   },
 };

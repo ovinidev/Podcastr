@@ -1,12 +1,36 @@
+/* eslint-disable */
 import Image from 'next/image';
-import { useContext } from 'react';
+import {
+  useContext, useEffect, useRef, 
+} from 'react';
 import Slider from 'rc-slider';
 import { PlayerContext } from '../../contexts/playerContext';
 import styles from './styles.module.scss';
 import 'rc-slider/assets/index.css';
 
 export function Player() {
-  const { episodeList, currentEpisodeIndex } = useContext(PlayerContext);
+  const audioRef = useRef<HTMLAudioElement>(null); // Referência para tag audio
+
+  const {
+    episodeList,
+    currentEpisodeIndex,
+    isPlaying,
+    togglePlay,
+    setPlayingState
+  } = useContext(PlayerContext);
+
+  useEffect(() => {
+    if (!audioRef.current) {
+      return;
+    }
+
+    if(isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+
+  }, [isPlaying]);
 
   const episode = episodeList[currentEpisodeIndex]; // Para determinar qual episódio ta tocando
 
@@ -18,12 +42,12 @@ export function Player() {
         <strong>Tocando agora</strong>
       </header>
 
-      { episode ? (
-        <div className={styles.playingEpisode}> 
-          <Image 
-            width={592} 
-            height={592} 
-            src={episode.thumbnail} 
+      {episode ? (
+        <div className={styles.playingEpisode}>
+          <Image
+            width={592}
+            height={592}
+            src={episode.thumbnail}
             objectFit="cover" />
           <strong>{episode.title}</strong>
           <span>{episode.members}</span>
@@ -38,9 +62,9 @@ export function Player() {
         <div className={styles.progress}>
           <span>00:00</span>
           <div className={styles.slider}>
-            { episode ? (
-              <Slider 
-                trackStyle={{ backgroundColor: '#04d361' }} 
+            {episode ? (
+              <Slider
+                trackStyle={{ backgroundColor: '#04d361' }}
                 railStyle={{ backgroundColor: '#9f75ff' }}
                 handleStyle={{ borderColor: '#04d361', borderWidth: 4 }} />
             ) : (
@@ -50,6 +74,16 @@ export function Player() {
           <span>00:00</span>
         </div>
 
+        {episode && (
+          <audio
+            src={episode.url}
+            ref={audioRef}
+            autoPlay
+            onPlay={() => setPlayingState(true)}
+            onPause={() => setPlayingState(false)}
+          />
+        )}
+
         <div className={styles.buttons}>
           <button type="button" disabled={!episode}>
             <img src="/shuffle.svg" alt="Embaralhar" />
@@ -57,8 +91,15 @@ export function Player() {
           <button type="button" disabled={!episode}>
             <img src="/play-previous.svg" alt="Tocar anterior" />
           </button>
-          <button type="button" className={styles.playButton} disabled={!episode}>
-            <img src="/play.svg" alt="Tocar" />
+          <button
+            type="button"
+            className={styles.playButton}
+            disabled={!episode}
+            onClick={togglePlay}
+            >
+            {isPlaying
+              ? <img src="/pause.svg" alt="Tocar" />
+              : <img src="/play.svg" alt="Tocar" />}
           </button>
           <button type="button" disabled={!episode}>
             <img src="/play-next.svg" alt="Tocar próxima" />
