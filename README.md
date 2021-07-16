@@ -17,7 +17,7 @@ Tecnologias utilizada no projeto:
   
 ## 💻 Projeto
 
-
+O projeto consiste em um podcast com alguns podcasts da Rocketseat.
   
 ## 🔍 Layout
 
