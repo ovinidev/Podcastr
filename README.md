@@ -34,4 +34,4 @@ Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navega
   
 ## Restulado final:
 
-
+<img src="https://i.imgur.com/xf43SeR.png" alt="imagem"> &nbsp;
