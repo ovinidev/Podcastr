@@ -32,6 +32,6 @@ Você pode visualizar a funcionalidade do projeto através do [link]().
 
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
   
-## Restulado final:
+## Resultado final:
 
 <img src="https://i.imgur.com/xf43SeR.png" alt="imagem"> &nbsp;
